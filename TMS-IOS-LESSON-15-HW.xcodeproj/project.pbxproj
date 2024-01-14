@@ -13,6 +13,7 @@
 		047641152B4FE063008AD74C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047641132B4FE063008AD74C /* Main.storyboard */; };
 		047641172B4FE065008AD74C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047641162B4FE065008AD74C /* Assets.xcassets */; };
 		0476411A2B4FE065008AD74C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047641182B4FE065008AD74C /* LaunchScreen.storyboard */; };
+		047641222B4FE39D008AD74C /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047641212B4FE39D008AD74C /* CustomAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		047641162B4FE065008AD74C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		047641192B4FE065008AD74C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0476411B2B4FE065008AD74C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		047641212B4FE39D008AD74C /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				0476410D2B4FE063008AD74C /* AppDelegate.swift */,
+				047641212B4FE39D008AD74C /* CustomAlert.swift */,
 				0476410F2B4FE063008AD74C /* SceneDelegate.swift */,
 				047641112B4FE063008AD74C /* ViewController.swift */,
 				047641132B4FE063008AD74C /* Main.storyboard */,
@@ -141,6 +144,7 @@
 				047641122B4FE063008AD74C /* ViewController.swift in Sources */,
 				0476410E2B4FE063008AD74C /* AppDelegate.swift in Sources */,
 				047641102B4FE063008AD74C /* SceneDelegate.swift in Sources */,
+				047641222B4FE39D008AD74C /* CustomAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
