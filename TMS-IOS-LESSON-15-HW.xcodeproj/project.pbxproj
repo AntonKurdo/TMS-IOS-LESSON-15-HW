@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0429D9962B56F37700CD4C49 /* UITapRecognizerWithClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429D9952B56F37700CD4C49 /* UITapRecognizerWithClosure.swift */; };
 		0476410E2B4FE063008AD74C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476410D2B4FE063008AD74C /* AppDelegate.swift */; };
 		047641102B4FE063008AD74C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476410F2B4FE063008AD74C /* SceneDelegate.swift */; };
 		047641122B4FE063008AD74C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047641112B4FE063008AD74C /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0429D9952B56F37700CD4C49 /* UITapRecognizerWithClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITapRecognizerWithClosure.swift; sourceTree = "<group>"; };
 		0476410A2B4FE063008AD74C /* TMS-IOS-LESSON-15-HW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TMS-IOS-LESSON-15-HW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0476410D2B4FE063008AD74C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0476410F2B4FE063008AD74C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0429D9942B56F35400CD4C49 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0429D9952B56F37700CD4C49 /* UITapRecognizerWithClosure.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		047641012B4FE063008AD74C = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		0476410C2B4FE063008AD74C /* TMS-IOS-LESSON-15-HW */ = {
 			isa = PBXGroup;
 			children = (
+				0429D9942B56F35400CD4C49 /* Utils */,
 				0476410D2B4FE063008AD74C /* AppDelegate.swift */,
 				047641212B4FE39D008AD74C /* CustomAlert.swift */,
 				0476410F2B4FE063008AD74C /* SceneDelegate.swift */,
@@ -144,6 +155,7 @@
 				047641122B4FE063008AD74C /* ViewController.swift in Sources */,
 				0476410E2B4FE063008AD74C /* AppDelegate.swift in Sources */,
 				047641102B4FE063008AD74C /* SceneDelegate.swift in Sources */,
+				0429D9962B56F37700CD4C49 /* UITapRecognizerWithClosure.swift in Sources */,
 				047641222B4FE39D008AD74C /* CustomAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

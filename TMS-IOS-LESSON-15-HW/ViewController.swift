@@ -45,7 +45,9 @@ class ViewController: UIViewController {
 
 extension ViewController: CustomAlertDelegate {
     func onSuccessTapped() {
-        view.backgroundColor = UIColor.random()
+        UIView.animate(withDuration: 0.6) {
+            self.view.backgroundColor = UIColor.random()
+        }
     }
 }
 

@@ -4,24 +4,26 @@ protocol CustomAlertDelegate: AnyObject {
     func onSuccessTapped()
 }
 
-class CustomAlert {
+class CustomAlert: UIView {
     struct Constants {
         static let alpha = 0.5
         static let alertHorizontalMargin: CGFloat = 20
         static let alertHeight: CGFloat = 310
     }
     
+
     weak var delegate: CustomAlertDelegate?
+    
+    var backgroundView: UIView!
     
     func showAlert(title: String, message: String, vc: UIViewController) {
         
         guard let targetView  = vc.view else { return  }
         
-        let backgroundView = {
+        backgroundView = {
             let backgroundView = UIView()
             backgroundView.frame = CGRect(x: 0, y: 0, width: targetView.bounds.width, height: targetView.bounds.height)
             backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0)
-            
             return backgroundView
         }()
         
@@ -35,7 +37,6 @@ class CustomAlert {
             return alertView
         }()
         
-        
         let titleLabel = {
             let label = UILabel()
             label.text = title
@@ -45,7 +46,6 @@ class CustomAlert {
             label.textAlignment = .center
             return label
         }()
-        
         
         let messageLabel = {
             let label = UILabel()
@@ -100,14 +100,14 @@ class CustomAlert {
         
         func dissmiss() {
             UIView.animate(withDuration: 0.3, animations: {
-                alertView.frame = CGRect(x: Constants.alertHorizontalMargin, y: -Constants.alertHeight, width: backgroundView.bounds.width - Constants.alertHorizontalMargin * 2, height: Constants.alertHeight)
+                alertView.frame = CGRect(x: Constants.alertHorizontalMargin, y: -Constants.alertHeight, width: self.backgroundView.bounds.width - Constants.alertHorizontalMargin * 2, height: Constants.alertHeight)
             }) { done in
                 if done {
                     UIView.animate(withDuration: 0.3, animations: {
-                        backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0)
+                        self.backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0)
                     }) { done in
                         if done {
-                            backgroundView.removeFromSuperview()
+                            self.backgroundView.removeFromSuperview()
                         }
                     }
                 }
@@ -115,13 +115,29 @@ class CustomAlert {
         }
         
         UIView.animate(withDuration: 0.3, animations: {
-            backgroundView.backgroundColor = UIColor.black.withAlphaComponent(Constants.alpha)
+            self.backgroundView.backgroundColor = UIColor.black.withAlphaComponent(Constants.alpha)
         }) { done in
             if done {
                 UIView.animate(withDuration: 0.3) {
-                    alertView.center = backgroundView.center
+                    alertView.center = self.backgroundView.center
                 }
             }
         }
+        
+        let tapGesture = UITapGestureRecognizerWithClosure() { _ in
+            dissmiss()
+        }
+        tapGesture.delegate = self
+        
+        backgroundView.addGestureRecognizer(tapGesture)
+    }
+}
+
+extension CustomAlert: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view == self.backgroundView {
+            return true
+         }
+         return false
     }
 }
