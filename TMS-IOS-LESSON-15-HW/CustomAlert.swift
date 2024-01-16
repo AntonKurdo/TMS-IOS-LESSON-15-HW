@@ -11,7 +11,7 @@ class CustomAlert: UIView {
         static let alertHeight: CGFloat = 310
     }
     
-
+    
     weak var delegate: CustomAlertDelegate?
     
     var backgroundView: UIView!
@@ -118,9 +118,14 @@ class CustomAlert: UIView {
             self.backgroundView.backgroundColor = UIColor.black.withAlphaComponent(Constants.alpha)
         }) { done in
             if done {
-                UIView.animate(withDuration: 0.3) {
+                UIView.animate(withDuration: 0.3,
+                               delay: 0.0,
+                               usingSpringWithDamping: 0.4, // значение на сколько пружинить
+                               initialSpringVelocity: 0,
+                               options: [],
+                               animations: {
                     alertView.center = self.backgroundView.center
-                }
+                })
             }
         }
         
@@ -137,7 +142,7 @@ extension CustomAlert: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         if touch.view == self.backgroundView {
             return true
-         }
-         return false
+        }
+        return false
     }
 }
